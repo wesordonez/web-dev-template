@@ -83,7 +83,11 @@ enviornment is optional, but recommended)
 pip install -r requirements.txt
 ```
 
-6. Add a `.env` file inside the `project` folder with the following
+6. Add a `.env` file inside the `project` folder with the following:
+
+Note: Upon running for the first time, a secret key is generated using the `get_random_secret_key()` function. Copy this into the `.env` file and delete the print statement. 
+
+
 ```py
 DEBUG=1
 PYTHON_VERSION=3.10
@@ -199,8 +203,8 @@ and set
 ```
 DEBUG=0
 ```
-**Generate secret key**
-To generate secret key use `from django.core.management.utils import get_random_secret_key` then `get_random_secret_key()` in your python shell
+<!-- **Generate secret key**
+To generate secret key use `from django.core.management.utils import get_random_secret_key` then `get_random_secret_key()` in your python shell -->
 
 **Note:** don't forget to set the sites to your domain instead of example.com in the admin panel
 
