@@ -77,13 +77,17 @@ https://www.python.org/downloads/
 directory to the current working directory.
 `cd home/Template`
 
-5. Install dependencies in an environment (creating an
+5. Create a virtual environment for local development
+`python3 venv -venv`
+`python3 source bin activate`
+
+6. Install dependencies in an environment (creating an
 enviornment is optional, but recommended)
 ```
 pip install -r requirements.txt
 ```
 
-6. Add a `.env` file inside the `project` folder with the following:
+7. Add a `.env` file inside the `project` folder with the following:
 
 Note: Upon running for the first time, a secret key is generated using the `get_random_secret_key()` function. Copy this into the `.env` file and delete the print statement. 
 
