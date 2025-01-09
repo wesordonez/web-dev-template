@@ -1,16 +1,11 @@
-# Django website template (production ready)
-Tired of writing Django project from scratch? use this template to speed up your Django development and deliver your project within few hours, instead of weeks or months.
+# Django Web Dev Template (production ready)
+Use this template to speed up your Django development and deliver web-development projects as quickly as possible.
 
-### Why use Django website template?
-Using a Django template can save you a lot of time, which is a huge benefit. Most clients don't care if you start from scratch or use a template; they just want their problem solved quickly. Whether you use Django or another framework usually doesn't matter to them as long as the job gets done efficiently.
-
-This template can help you save hours of work, allowing you to deliver a production-ready website in just a few hours.
-
-### What features does Django template include?
-- Production ready, you can immediately deploy this to cloud such as Vercel, Railway.app, Render.com etc.
-- Comes with a landing page that you can modify.
-- Responsive design, forget about making things responsive yourself.
-- Contact us page.
+### What features does this Django template include?
+- Production ready, you can immediately deploy this to Digital Ocean.
+- Comes with a landing, about us, blog, and contact page that you can modify.
+- Responsive design.
+- Contact us form.
 - 404 page
 - Has blog with Trix WYSIWYG editor built into the admin panel.
 - Technical SEO optimization.
@@ -18,38 +13,12 @@ This template can help you save hours of work, allowing you to deliver a product
 - Robots.txt
 - Google analytics
 - Custom user model.
+- Google SMTP email server connections
 - Tailwind css setup for rapid development (note: the tailwind classes are prefixed with `tw-`, to differentiate them)
 
-### Do I need to be an expert in Django to use this?
-A basic understanding of HTML, CSS, and JavaScript is all you need to get started. However, if you want to add custom pages or make more advanced modifications, having at least some foundational knowledge will be really helpful.
-
-### Looking for Other boiler plates?
-**Basic non-saas website template:** [Django boilerplate](https://github.com/PaulleDemon/Django-website-template)
-
-**Free and open-source landing pages:** [Free landing pages](https://github.com/PaulleDemon/awesome-landing-pages)
-
-
-#### Want advance Django boiler plate?
-If you are looking for more advanced features, such as analytics integration, career pages, advanced
-blog integration check out the premium [django templates](https://templates.foxcraft.tech/django-website-templates).
-
-If you need anything custom feel free to contact [Django developer](https://tally.so/r/woO0Kx)
-
-### Demo
-Visit the demo site: [Django Demo website](https://django-website-template.vercel.app/)
-
-For admin use
-```
-demo@mail.com
-demo123*
-```
 ### Table of contents
 
-- [Django website template (production ready)](#django-website-template-production-ready)
-  - [Why use Django website template?](#why-use-django-website-template)
   - [What features does Django template include?](#what-features-does-django-template-include)
-  - [Do I need to be an expert in Django to use this?](#do-i-need-to-be-an-expert-in-django-to-use-this)
-  - [Demo](#demo)
   
 - [Local development](#local-development)
   - [Admin superuser](#admin-superuser)
@@ -64,93 +33,73 @@ demo123*
 
 ## Local development
 
-follow the below steps :
-1. Star the repo: https://github.com/PaulleDemon/Django-website-template
-   
-2. Clone the repo
-`git clone https://github.com/PaulleDemon/Django-website-template`
+Follow the below steps for local development setup:
 
-3. Install python 3.8 or above.
-https://www.python.org/downloads/
+1. Ensure a new repo has been created using this template ('https://github.com/wesordonez/web-dev-template')
 
-4. Open the template folder and from the terminal change the
-directory to the current working directory.
-`cd home/Template`
+2. Create a virtual environment for local development
 
-5. Create a virtual environment for local development
-`python3 venv -venv`
-`python3 source bin activate`
-
-6. Install dependencies in an environment (creating an
-enviornment is optional, but recommended)
+```py
+python3 venv -venv
+python3 source bin activate
 ```
+
+3. Install dependencies
+
+```py
 pip install -r requirements.txt
 ```
 
-7. Add a `.env` file inside the `project` folder with the following:
+4. Add a `.env` file inside the `project` folder using the included `.env.dev` file as a guide.
 
-Note: Upon running for the first time, a secret key is generated using the `get_random_secret_key()` function. Copy this into the `.env` file and delete the print statement. 
+Required env variables are:
+- SECRET_KEY
+- Development Database Variables (default configuration is for postgres but sqlite would work too)
 
+> **NOTE:** The secret key is generated using the `get_random_secret_key()` function. Copy this into the `.env` file and delete the print statement AFTER the databases and tables have been migrated
 
-```py
-DEBUG=1
-PYTHON_VERSION=3.10
-DOMAIN=""
+5. Create a new database in postgres (PGAdmin 4) with the name used in the env variabl `SQL_NAME`
 
-ALLOWED_HOSTS=".up.railway.app"
-ALLOWED_CORS=""
+6. Now in your terminal create database tables using
 
-SECRET_KEY=""
-PORD_SECRET_KEY=""
-
-DJANGO_SUPERUSER_EMAIL="" # optonal use if you want to create supruser using --noinput
-DJANGO_SUPERUSER_PASSWORD="" # optonal use if you want to create supruser using --noinput
-
-EMAIL_HOST="smtpout.server.net"
-EMAIL_HOST_USER=""
-EMAIL_HOST_PASSWORD=""
-
-POSTGRES_DATABASE=""
-POSTGRES_USER=""
-POSTGRES_PASSWORD=""
-POSTGRES_HOST=""
-
-POSTGRES_URL=""
-
-PROJECT_ID="" # firebase project id
-BUCKET_NAME=".appspot.com" # firebase storage name
-FIREBASE_CRED_PATH="project/firebase-cred.json"
-
-FIREBASE_ENCODED=""
-CLOUD_PLATFORM="RAILWAY"
-
-GOOGLE_ANALYTICS="G-"
-```
-
-7. Now in your terminal Create databases and Tables using
 ```
 python manage.py migrate
 ```
-Your database is created and ready to use.
+Your database should be created and ready to use.
+
+> **IMPORTANT:** This step should not be skipped as it may cause problems in the migration history order requiring a restart.
+
+7. The migrate command should have triggered the `get_random_secret_key()` function outputing a secret key. This should be copied into the `env` file at this time and the printstatement commented out. A new secret key should be created for the production secret when time for deployment. 
 
 8. Now run the website from the terminal using.
+
 ```py
 python manage.py runserver
 ```
 Your website should be available at: http://localhost:8000/
 
-9. To run Tailwind CSS open a new terminal and run
+Test the website works and the contact form successfully writes data to the created database.
+
+9. To run Tailwind CSS open a new terminal and run:
+```py
+npm install tailwindcss
+npm install cross-env
+npm install postcss-simple-vars
+```
+Then you should be able to start tailwind which will auto update and watch for changes using this command:
 ```py
 python manage.py tailwind start
 ```
 
-**Note:** If you are facing problems starting this program in windows OS, remove logging from project/settings.py
-
-### Admin superuser
-To create a admin superuser use the following in terminal
+10. Create admin superuser using the following command in terminal:
 ```py
 python manage.py createsuperuser
 ```
+
+Follow the prompts and test at: https:localhost:8000/admin/
+
+## Trouble Shooting
+**Note:** If you are facing problems starting this program in windows OS, remove logging from project/settings.py
 
 ## Customizing
 
@@ -185,6 +134,10 @@ To add scripts at the end of the elements
 
 ## Deployment:
 
+Follow Dunosis documentation to deploy to Digital Ocean App Platform using GitHub Actions. 
+
+Alternatively (with additional set up):
+
 Deploy to vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPaulleDemon%2FDjango-website-template&demo-title=Django%20website%20template&demo-description=A%20starters%20template%20for%20django%20developers%2C%20freelancers%20and%20agencies&demo-url=https%3A%2F%2Fdjango-website-template.vercel.app%2F)
@@ -207,8 +160,6 @@ and set
 ```
 DEBUG=0
 ```
-<!-- **Generate secret key**
-To generate secret key use `from django.core.management.utils import get_random_secret_key` then `get_random_secret_key()` in your python shell -->
 
 **Note:** don't forget to set the sites to your domain instead of example.com in the admin panel
 
@@ -234,17 +185,10 @@ base64 firebase-cred.json > encoded.txt
 ```
 Now copy the contents of encoded.txt and paste it in `FIREBASE_ENCODED="wedde"` variable
 
-### Tutorials
-  #### Looking to learn about adding payment to Django?
-  Check out this blog about [adding payment to django](https://dev.to/paul_freeman/adding-payment-to-django-app-4cc9). This should give you an overview about adding payments to Django.
+## Credits
+This template was based heavily on the following template by PaulleDemon
+- https://github.com/PaulleDemon/Django-website-template
 
-  #### Adding ESP
-  Check out this blog on adding ESP to help you supercharge [transactional emails](https://dev.to/paul_freeman/adding-esp-to-supercharge-your-django-email-4jkp)
-
-  #### Deploying to Vercel
-  Check out this blog for vercel deployment help [Django vercel deployment](https://dev.to/paul_freeman/deploying-django-website-to-vercel-19ed)
-
-## Images credits
 Images are taken from free to use sites such as 
 1. unsplash - https://unsplash.com/
 2. Pexels - https://www.pexels.com/
