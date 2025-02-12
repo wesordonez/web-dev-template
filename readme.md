@@ -82,7 +82,7 @@ Test the website works and the contact form successfully writes data to the crea
 
 9. To run Tailwind CSS open a new terminal and run:
 ```py
-npm install tailwindcss
+npm install tailwindcss@3.4
 npm install cross-env
 npm install postcss-simple-vars
 ```
@@ -90,6 +90,7 @@ Then you should be able to start tailwind which will auto update and watch for c
 ```py
 python manage.py tailwind start
 ```
+> **IMPORTANT:** Tailwind has been updated to 4.0 which has a different install process. Template is not yet configured for it so use older 3.4 version! 
 
 10. Create admin superuser using the following command in terminal:
 ```py
