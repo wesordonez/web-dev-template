@@ -721,6 +721,14 @@ video {
   margin-top: 1.5rem;
 }
 
+.mb-\[2\%\] {
+  margin-bottom: 2%;
+}
+
+.mt-\[10\%\] {
+  margin-top: 10%;
+}
+
 .block {
   display: block;
 }
@@ -818,6 +826,10 @@ video {
   min-height: 40px;
 }
 
+.min-h-\[80px\] {
+  min-height: 80px;
+}
+
 .w-\[250px\] {
   width: 250px;
 }
@@ -859,6 +871,10 @@ video {
   min-width: 450px;
 }
 
+.min-w-\[30px\] {
+  min-width: 30px;
+}
+
 .max-w-\[150px\] {
   max-width: 150px;
 }
@@ -881,6 +897,14 @@ video {
 
 .max-w-\[auto\] {
   max-width: auto;
+}
+
+.max-w-\[350px\] {
+  max-width: 350px;
+}
+
+.max-w-\[950px\] {
+  max-width: 950px;
 }
 
 .border-collapse {
@@ -1085,6 +1109,10 @@ video {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -1166,6 +1194,14 @@ video {
   line-height: 1.5;
 }
 
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-snug {
+  line-height: 1.375;
+}
+
 .tracking-normal {
   letter-spacing: 0em;
 }
@@ -1198,6 +1234,11 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+
+.\!text-blue-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1)) !important;
 }
 
 .opacity-100 {
@@ -1370,7 +1411,52 @@ video {
   }
 }
 
+@media not all and (min-width: 640px) {
+  .max-sm\:rounded-full {
+    border-radius: 9999px;
+  }
+
+  .max-sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .max-sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:top-\[10\%\] {
+    top: 10%;
+  }
+
+  .md\:px-\[15\%\] {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .md\:px-\[10\%\] {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
 @media (min-width: 1024px) {
+  .lg\:fixed {
+    position: fixed;
+  }
+
+  .lg\:right-\[10\%\] {
+    right: 10%;
+  }
+
   .lg\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -1380,11 +1466,20 @@ video {
     display: none;
   }
 
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
   .lg\:place-items-center {
     place-items: center;
   }
 
   .lg\:justify-around {
     justify-content: space-around;
+  }
+
+  .lg\:px-\[30\%\] {
+    padding-left: 30%;
+    padding-right: 30%;
   }
 }
