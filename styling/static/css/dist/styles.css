@@ -794,6 +794,10 @@ video {
   max-height: 250px;
 }
 
+.max-h-\[400px\] {
+  max-height: 400px;
+}
+
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
@@ -865,6 +869,10 @@ video {
 
 .max-w-\[750px\] {
   max-width: 750px;
+}
+
+.max-w-\[auto\] {
+  max-width: auto;
 }
 
 .border-collapse {
@@ -1132,6 +1140,10 @@ video {
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .uppercase {
