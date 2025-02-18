@@ -44,7 +44,7 @@ cloud_platform = os.environ.setdefault('CLOUD_PLATFORM', '')
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 # SECURITY WARNING: Delete this line after setting up the environment variables
-print(f"SECRET KEY:", get_random_secret_key())
+# print(f"SECRET KEY:", get_random_secret_key())
 
 # SECURITY WARNING: keep the secret key used in production secret!
 if DEBUG:
