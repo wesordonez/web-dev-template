@@ -57,9 +57,9 @@
                     </div>
                     <div class="mt-4 mb-[2%] w-full p-2 text-justify">
                         {% if blog.meta_description %}
-                            {{blog.meta_description}} <span class="!text-blue-500" style="color: #3495eb;">continue reading...</span>
+                            {{blog.meta_description}} <span class="text-blue-500!" style="color: #3495eb;">continue reading...</span>
                         {% else %}
-                            {{blog.body|strip_html_tags|slice:":300"|safe}} <span class="!text-blue-500" style="color: #3495eb;">continue reading...</span>
+                            {{blog.body|strip_html_tags|slice:":300"|safe}} <span class="text-blue-500!" style="color: #3495eb;">continue reading...</span>
                         {% endif %}
                     </div>
                     <div class="text-sm text-gray-500 text-right">
