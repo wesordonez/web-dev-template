@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-    prefix: 'tw-',
+    prefix: '',
 	important: false,
     content: [
         /**

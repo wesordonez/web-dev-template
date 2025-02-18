@@ -64,49 +64,49 @@
 
 </head>
     
-{% comment %} <body class="tw-min-h-[100vh]" data-bs-theme="dark"> {% endcomment %}
-<body class="tw-min-h-[100vh] tw-w-full tw-bg-[#ffffff] tw-flex tw-flex-col">
+{% comment %} <body class="min-h-[100vh]" data-bs-theme="dark"> {% endcomment %}
+<body class="min-h-[100vh] w-full bg-[#ffffff] flex flex-col">
     
-    <div id="toast" class="tw-p-2 tw-px-4 tw-bg-black tw-h-max tw-z-[5000] tw-fixed 
-                            tw-top-[5%] tw-left-[50%] tw-translate-x-[-50%] 
-                            tw-place-items-center
-                            tw-hidden tw-rounded-md
-                            tw-border-0 tw-text-white" 
+    <div id="toast" class="p-2 px-4 bg-black h-max z-[5000] fixed 
+                            top-[5%] left-[50%] translate-x-[-50%] 
+                            place-items-center
+                            hidden rounded-md
+                            border-0 text-white" 
                     role="alert">
-        <div class="tw-flex tw-gap-1">
+        <div class="flex gap-1">
           <div class="toast-body" id="toast-body">
            
           </div>
-          <button type="button" class="bi bi-x tw-text-lg" aria-label="Close"></button>
+          <button type="button" class="bi bi-x text-lg" aria-label="Close"></button>
         </div>
     </div>
 
-    <header class="tw-flex tw-w-full tw-z-20
-                    tw-h-[60px]  
-                    lg:tw-justify-around
-                    tw-absolute tw-top-0 tw-px-[10%]
-                    max-lg:tw-mr-auto
-                    tw-bg-white
-                    tw-text-black
+    <header class="flex w-full z-20
+                    h-[60px]  
+                    lg:justify-around
+                    absolute top-0 px-[10%]
+                    max-lg:mr-auto
+                    bg-white
+                    text-black
                     ">
 
-        <a class="tw-w-[50px] tw-h-[50px] tw-p-[4px]" href="{% url "home" %}">
+        <a class="w-[50px] h-[50px] p-[4px]" href="{% url "home" %}">
             <img src="{% static "assets/logos/logo1.png" %}" 
-                  alt="logo" class="tw-w-full tw-h-full tw-object-contain">
+                  alt="logo" class="w-full h-full object-contain">
 
         </a>
-        <div class="collapsable-header animated-collapse max-lg:tw-shadow-md"
+        <div class="collapsable-header animated-collapse max-lg:shadow-md"
                     id="collapsed-header-items"
                     >
-            <div class=" tw-w-max
-                            tw-text-base 
-                            tw-flex tw-gap-5 tw-h-full lg:tw-mx-auto
-                            lg:tw-place-items-center 
-                            max-lg:tw-place-items-end
-                            max-lg:tw-flex-col
-                            max-lg:tw-mt-[50px]
-                            max-lg:tw-gap-5
-                            tw-text-black
+            <div class=" w-max
+                            text-base 
+                            flex gap-5 h-full lg:mx-auto
+                            lg:place-items-center 
+                            max-lg:place-items-end
+                            max-lg:flex-col
+                            max-lg:mt-[50px]
+                            max-lg:gap-5
+                            text-black
                         ">
                     
                 <a class="header-links" href="{% url "home" %}">
@@ -123,19 +123,19 @@
                     Contact us
                 </a>
             </div>
-            <div class="tw-flex tw-gap-[20px] tw-place-items-center tw-text-xl
-                         max-lg:!tw-text-white
-                         max-lg:tw-place-content-center
-                        max-lg:tw-w-full
-                         max-lg:tw-place-items-start
+            <div class="flex gap-[20px] place-items-center text-xl
+                         max-lg:!text-white
+                         max-lg:place-content-center
+                        max-lg:w-full
+                         max-lg:place-items-start
                          ">
                 <a href="https://www.facebook.com/" 
                         target="_blank" 
                         rel="noreferrer"
                         aria-label="facebook"
                         class=" header-links
-                                tw-transition-colors
-                                tw-duration-[0.3s]
+                                transition-colors
+                                duration-[0.3s]
                                 "
                         >
                     <i class="bi bi-facebook"></i>
@@ -146,8 +146,8 @@
                         rel="noreferrer"
                         aria-label="instagram"
                         class="header-links
-                                tw-transition-colors
-                                tw-duration-[0.3s]
+                                transition-colors
+                                duration-[0.3s]
                                 "
                             >
                     <i class="bi bi-instagram"></i>
@@ -157,37 +157,37 @@
                         rel="noreferrer"
                         aria-label="github"
                         class="header-links
-                                tw-transition-colors
-                                tw-duration-[0.3s]
+                                transition-colors
+                                duration-[0.3s]
                                 "
                             >
                     <i class="bi bi-github"></i>
                 </a>
             </div>
         </div>
-        <button class="tw-absolute tw-text-black tw-z-50 
-                        tw-right-3
-                        tw-top-3
+        <button class="absolute text-black z-50 
+                        right-3
+                        top-3
                         
-                         tw-text-3xl  bi bi-list lg:tw-hidden" 
+                         text-3xl  bi bi-list lg:hidden" 
                 onclick="toggleHeader()" aria-label="menu" id="collapse-btn">
             <!-- <i class="bi bi-list"></i> -->
         </button>
     </header>
 
-    <div class="tw-w-full tw-h-full tw-mt-[50px]">
+    <div class="w-full h-full mt-[50px]">
         {% block content %}{% endblock content %}
     </div>
-    <footer class="tw-flex max-md:tw-flex-col tw-w-full tw-p-[5%]
-                    tw-px-[10%] tw-place-content-around tw-gap-3 
-                    tw-text-black
-                    tw-mt-auto
+    <footer class="flex max-md:flex-col w-full p-[5%]
+                    px-[10%] place-content-around gap-3 
+                    text-black
+                    mt-auto
                     ">
-        <div class="tw-h-full tw-w-[250px] tw-flex tw-flex-col 
-                    tw-gap-6 tw-place-items-center max-md:tw-w-full">
+        <div class="h-full w-[250px] flex flex-col 
+                    gap-6 place-items-center max-md:w-full">
             
             <img src="{% static "assets/logos/logo1.png" %}" 
-                alt="logo"  class="tw-max-w-[150px] max-md:tw-max-w-[120px]">
+                alt="logo"  class="max-w-[150px] max-md:max-w-[120px]">
             <div>
                 2 Lord Edward St,   
                 <br>
@@ -195,29 +195,29 @@
                 <br>
                 United States
             </div>
-            <div class="tw-mt-3 tw-font-semibold tw-text-lg">
+            <div class="mt-3 font-semibold text-lg">
                 Follow us
             </div>
-            <div class="tw-flex tw-gap-4 tw-text-2xl">
+            <div class="flex gap-4 text-2xl">
                 <a href="https://facebook.com/" aria-label="Facebook">
                     <i class="bi bi-facebook"></i>
                 </a>
                 <a href="https://twitter.com/pauls_freeman" aria-label="Twitter">
                     <i class="bi bi-twitter"></i>
                 </a>
-                <a href="https://instagram.com/" class="tw-w-[40px] tw-h-[40px]" aria-label="Instagram">
+                <a href="https://instagram.com/" class="w-[40px] h-[40px]" aria-label="Instagram">
                    <i class="bi bi-instagram"></i>
                 </a>
             </div>
         </div>
 
-        <div class="tw-h-full tw-w-[250px] tw-flex tw-flex-col 
-                    tw-gap-4">
+        <div class="h-full w-[250px] flex flex-col 
+                    gap-4">
 
-            <h2 class="tw-text-3xl max-md:tw-text-xl">
+            <h2 class="text-3xl max-md:text-xl">
                 Resources
             </h2>
-            <div class=" tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+            <div class=" flex flex-col gap-3 max-md:text-sm">
                 <a href="{% url "home" %}" class="footer-link">About us</a>
                 <a href="" class="footer-link">FAQ</a>
                 <a href="{% url "contact-us" %}" class="footer-link">Contact Us</a>
