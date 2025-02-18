@@ -717,6 +717,10 @@ video {
   margin-top: 5%;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -780,6 +784,10 @@ video {
 
 .h-\[35px\] {
   height: 35px;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .max-h-\[150px\] {
